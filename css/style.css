@@ -89,7 +89,7 @@ hr {
 }
 .navbar-custom {
 	margin-bottom: 0;
-	background-color: #121d1f;
+	background-color: #9568D6;
 	border-radius: 0px;
 	padding: 10px 0;
 }
@@ -204,7 +204,7 @@ hr {
 /* Skills Section */
 #skills {
 	padding: 100px 0;
-	background: #7bc3d1;
+	background: #1DC7EA;
 }
 #skills h2 {
 	color: #fff;
@@ -382,7 +382,7 @@ ol.type li a:hover {
 /* Achivements Section */
 #achievements {
 	padding: 100px 0;
-	background: #7bc3d1;
+	background: #1DC7EA;
 }
 #achievements h2 {
 	color: #fff;
@@ -465,7 +465,7 @@ ol.type li a:hover {
 	border: 1px solid #eee;
 	border-radius: 100%;
 	text-align: center;
-	background: #fff;
+	background: #fbbe2d;
 }
 .timeline>li .timeline-image h4 {
 	margin-top: 20px;
@@ -512,7 +512,7 @@ ol.type li a:hover {
 #contact {
 	padding: 100px 0 40px 0;
 	color: #121d1f;
-	background: #7bc3d1;
+	background: #1DC7EA;
 }
 #contact h2 {
 	color: #fff;
@@ -618,8 +618,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 }
 /* Footer Section*/
 #footer {
-	background: #121d1f;
-	color: #7d8384;
+	background: #9568D6;
+	color: #fff;
 	padding: 30px 0 25px 0;
 }
 #footer p {
