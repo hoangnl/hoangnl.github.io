@@ -113,17 +113,6 @@ function init() {
             (body.offsetHeight <= windowHeight || 
              html.offsetHeight <= windowHeight)) {
 
-        // DOMChange (throttle): fix height
-        var pending = false;
-        var refresh = function () {
-            if (!pending && html.scrollHeight != document.height) {
-                pending = true; // add a new pending action
-                setTimeout(function () {
-                    html.style.height = document.height + 'px';
-                    pending = false;
-                }, 500); // act rarely to stay fast
-            }
-        };
         html.style.height = 'auto';
         setTimeout(refresh, 10);
 
@@ -463,10 +452,13 @@ function isTouchpad(deltaY) {
     deltaBuffer.push(deltaY);
     deltaBuffer.shift();
     clearTimeout(deltaBufferTimer);
+
+    var allEquals    = (deltaBuffer[0] == deltaBuffer[1] && 
+                        deltaBuffer[1] == deltaBuffer[2]);
     var allDivisable = (isDivisible(deltaBuffer[0], 120) &&
                         isDivisible(deltaBuffer[1], 120) &&
                         isDivisible(deltaBuffer[2], 120));
-    return !allDivisable;
+    return !(allEquals || allDivisable);
 } 
 
 function isDivisible(n, divisor) {
@@ -520,16 +512,12 @@ function pulse(x) {
 }
 
 var isChrome = /chrome/i.test(window.navigator.userAgent);
-var wheelEvent = null;
-if ("onwheel" in document.createElement("div"))
-	wheelEvent = "wheel";
-else if ("onmousewheel" in document.createElement("div"))
-	wheelEvent = "mousewheel";
+var isMouseWheelSupported = 'onmousewheel' in document; 
 
-if (wheelEvent && isChrome) {
-	addEvent(wheelEvent, wheel);
+if (isMouseWheelSupported && isChrome) {
 	addEvent("mousedown", mousedown);
+	addEvent("mousewheel", wheel);
 	addEvent("load", init);
-}
+};
 
 })();
