@@ -658,7 +658,7 @@ a.totop-link {
     width: 65%;
 }
 .skill-list ul li:before {
-    content: "\8e06fcc";
+    content: "\f00c";
     font-family: 'FontAwesome';
     font-size: 15px;
     margin: 0 5px 0 0
