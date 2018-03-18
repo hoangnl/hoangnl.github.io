@@ -609,8 +609,10 @@ a.totop-link {
    ========================================================================== */
 
 .about {
-    background: url(../images/about.jpg)no-repeat 100% 0 scroll;
+    background: url(../images/about.png)no-repeat 100% 0 scroll;
     background-size: contain;
+    padding-top:100px;
+    background-origin: content-box;
 }
 .about .inner {
     width: 50%
